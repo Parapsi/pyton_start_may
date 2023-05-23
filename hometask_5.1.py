@@ -1,8 +1,8 @@
-number = 1
+number = 0
 SEVEN = 7
 while True:
     if number % SEVEN == 0 and number < 100:
         print(number)
-        number += 1
+        number += SEVEN
     else:
-        number += 1
+        number += SEVEN

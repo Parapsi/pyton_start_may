@@ -1,5 +1,5 @@
 import math
-decimals = 2
-while decimals <= 10:
-    print(round(math.pi, decimals))
-    decimals +=1
+decimals = 3
+while decimals <= 12:
+    print(f"{math.pi:.{decimals}}")
+    decimals += 1

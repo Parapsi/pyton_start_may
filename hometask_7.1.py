@@ -1,8 +1,8 @@
 text = input("")
 lane = text.replace(",", " ").split()
-dict = {}
+dictionary = {}
 for i in lane:
-    dict[i] = lane.count(i)
-print(dict)
+    dictionary[i] = lane.count(i)
+print(dictionary)
 
 

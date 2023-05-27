@@ -1,7 +1,6 @@
 word = input("")
-word_1 = list(word)
-word_2 = []
-for a in word_1:
-    if not a in word_2:
-        word_2.append(a)
-print(word_2)
+x = 1
+while len(word[0:x]) / 2 * word.count(word[0:x]) != len(word) / 2:
+    x += 1
+print(word[0:x])
+

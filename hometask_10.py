@@ -7,26 +7,34 @@ member = input("insert family member: \n")
 for row in names_1:
     row_1 = row.replace("\n", "").replace("$", "")
     lst.append(row_1)
+
+
+def action(dictions, objects):
+    if dictions.get(objects, False) is False:
+        dictions[objects] = [money]
+    else:
+        dictions[objects].append(money)
+
+
 for i in lst:
     res = i.split()
-    _, *names, money, objects = res
+    _, *names, money, items = res
     money = float(money)
     names = " ".join(names)
-    if purchases.get(objects, False) is False:
-        purchases[objects] = [money]
-    elif spending.get(names, False) is False:
-        spending[names] = [money]
-    else:
-        purchases[objects].append(money)
-        spending[names].append(money)
+    action(purchases, items)
+    action(spending, names)
 
 member_spendings = len(spending[member])
 print(f"{member} bought {member_spendings} items and spent {round(sum(spending[member]), 2)} dollars ")
 print("-" * 30)
-for i in purchases:
-    purchases[i] = sum(purchases[i])
-    print(f"{i}: {round(purchases[i], 2)}")
+
+
+def listed(dictions):
+    for j in dictions:
+        dictions[j] = sum(dictions[j])
+        print(f"{j}: {round(dictions[j], 2)} dollars")
+
+
+listed(purchases)
 print("-" * 30)
-for i in spending:
-    spending[i] = sum(spending[i])
-    print(f"{i} spent: {round(spending[i], 2)} dollars")
+listed(spending)

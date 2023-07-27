@@ -11,10 +11,9 @@ class Product:
         self.name = name
         self.price = price
         self.description = description
-
-    def __str__(self):
         if self.price <= 0:
             raise WrongPrice
+    def __str__(self):
         return f"Product name:{self.name}, price:{self.price}, description:{self.description}"
 
 
